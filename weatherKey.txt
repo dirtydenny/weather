@@ -1,0 +1,11 @@
+b2e24dab707e582bdf1f20a5720ab74e
+
+
+https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=b2e24dab707e582bdf1f20a5720ab74e
+
+https://api.openweathermap.org/data/2.5/weather?q=Indio&appid=b2e24dab707e582bdf1f20a5720ab74e
+
+ -116.2156, lat: 33.7206
+
+
+https://api.openweathermap.org/data/2.5/forecast?lat=33.7206&lon=-116.2156&appid=b2e24dab707e582bdf1f20a5720ab74e
