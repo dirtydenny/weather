@@ -35,28 +35,28 @@
       <div class="row pb-4">
         <button type="submit" id="city-bt" class="btn btn-primary">Search</button>
       </div>
-
+<!-- need to change to searched cities below, not -->
       <div class="row">
-        <button class="btn btn-secondary mb-4" type="button">City 1</button>
-        <button class="btn btn-secondary mb-4" type="button">City 2</button>
-        <button class="btn btn-secondary mb-4" type="button">City 3</button>
-        <button class="btn btn-secondary mb-4" type="button">City 4</button>
-        <button class="btn btn-secondary mb-4" type="button">City 5</button>
-        <button class="btn btn-secondary mb-4" type="button">City 6</button>
-        <button class="btn btn-secondary mb-4" type="button">City 7</button>
-        <button class="btn btn-secondary mb-4" type="button">City 8</button>
+        <button class="btn btn-secondary mb-4" type="button">Orange</button>
+        <button class="btn btn-secondary mb-4" type="button">Los Angeles</button>
+        <button class="btn btn-secondary mb-4" type="button">New York</button>
+        <button class="btn btn-secondary mb-4" type="button">Washington D.C.</button>
+        <button class="btn btn-secondary mb-4" type="button">Tokyo</button>
+        <button class="btn btn-secondary mb-4" type="button">Beijing</button>
+        <button class="btn btn-secondary mb-4" type="button">London</button>
+        <button class="btn btn-secondary mb-4" type="button">Paris</button>
       </div>
     </div>
     <div class="col-10 ">
       <div class="row gx-3">
-        <div class="card">
-          <div class="card-body">
+        <div id="currentday">
+         -- <div class="card-body">
             <h5 class="card-title">Searched City</h5>
             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.
             </p>
-          </div>
+          </div> 
         </div>
       </div>
       <h3>5 Day Forecast </h3>
@@ -64,7 +64,7 @@
         <div class="row">
             <div class="card col" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="card-title">Day 1</h5>
+            <h5 class="card-title dateDay1"></h5>
             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.
@@ -129,6 +129,8 @@
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
 <script src="script.js"></script>
 </body>
 
