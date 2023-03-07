@@ -69,32 +69,3 @@ $(document).ready(() => {
   // output: weather of the city
 });
 
-function render() {
-  for (var i = 0; i < gifs.length; i++) {
-    var animUrl = gifs[i].images.original.url;
-    var stillUrl = gifs[i].images.original_still.url;
-    var gifTitle = gifs[i].title;
-
-    var gifElem = document.createElement("div");
-    gifElem.className = "col-12 col-md-4";
-    gifElem.innerHTML = `
-           <div class="card">
-            <img 
-              src="${stillUrl}"
-              data-anim="${animUrl}"
-              data-still="${stillUrl}" 
-              class="card-img-top gifImg" 
-              alt="${gifTitle}">
-            <div class="card-body">
-              <h5 class="card-title">${gifTitle}</h5>
-              <button 
-                class="btn btn-primary gifFav" 
-                data-index="${i}">
-                Favorite
-              </button>
-            </div>
-           </div>
-          `;
-    document.getElementById("gifDisp").append(gifElem);
-  }
-}
