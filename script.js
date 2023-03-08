@@ -27,23 +27,22 @@ $(document).ready(() => {
     var cityNameEl = document.createElement("h2");
     cityNameEl.textContent = cityName;
  
-    // var imageEl = document.createElement("img");
-    // var imageUrl =
-    //   "https://openweathermap.org/img/wn/" +
-    //   weather.weather[0].icon +
-    //   ".png";
+    var imageEl = document.createElement("img");
+    var imageUrl =
+      "https://openweathermap.org/img/wn/" +
+      data.weather[0].icon + ".png";
 
-    //imageEl.setAttribute("src", imageUrl);
+    imageEl.setAttribute("src", imageUrl);
 
     var currentTempEl = document.createElement("h3");
-    console.log(data.main[0].temp);
+    console.log(data.main.temp);
     currentTempEl.textContent = "Tempurature: " + 
-    data.main[0].temp;
+    data.main.temp;
 
-    // var humidityEl = document.createElement("p");
-    // console.log(data.list[0].main.humidity);
-    // humidityEl.textContent = "Humidity: " + 
-    // data.list[0].main.humidity + '%';
+    var humidityEl = document.createElement("p");
+    console.log(data.main.humidity);
+    humidityEl.textContent = "Humidity: " + 
+    data.main.humidity + '%';
 
     // var windEl = document.createElement("p");
     // console.log(data.list[0].main.wind);
@@ -51,10 +50,10 @@ $(document).ready(() => {
 
     boxForCurrentDay.append(cityNameEl);
     boxForCurrentDay.append(dateToday);
-  //  boxForCurrentDay.append(imageEl);
+     boxForCurrentDay.append(imageEl);
     boxForCurrentDay.append(currentTempEl);
 
-  //  boxForCurrentDay.append(humidityEl);
+    boxForCurrentDay.append(humidityEl);
  //   boxForCurrentDay.append(windEl);
     //
   }
