@@ -2,10 +2,14 @@
  const currentTemp = 
  const currentCondition (rain, snow, sunny, partly cloudy)
 */
+var dateToday = moment().format("MMMM Do YYYY, h:mm:ss a");
 
 $(document).ready(() => {
   var boxForCurrentDay = document.querySelector("#currentday");
   var historySection = document.querySelector("#search-history");
+  var boxForFutureDay = document.querySelector
+  ("dateDay1");// + [i]
+
   const saveHistory = (cityName) => {
     // hisotry button for each city
     var newButton = document.createElement("button");
@@ -23,41 +27,43 @@ $(document).ready(() => {
     var cityNameEl = document.createElement("h2");
     cityNameEl.textContent = cityName;
  
-    var imageEl = document.createElement("img");
-    var imageUrl =
-      "https://openweathermap.org/img/wn/" +
-      data.list[0].weather[0].icon +
-      ".png";
+    // var imageEl = document.createElement("img");
+    // var imageUrl =
+    //   "https://openweathermap.org/img/wn/" +
+    //   weather.weather[0].icon +
+    //   ".png";
 
-    imageEl.setAttribute("src", imageUrl);
+    //imageEl.setAttribute("src", imageUrl);
 
     var currentTempEl = document.createElement("h3");
-    console.log(data.list[0].main.temp);
-    currentTempEl.textContent = "Tempurature: " + data.list[0].main.temp;
+    console.log(data.main[0].temp);
+    currentTempEl.textContent = "Tempurature: " + 
+    data.main[0].temp;
 
-    var humidityEl = document.createElement("p");
-    console.log(data.list[0].main.humidity);
-    humidityEl.textContent = "Humidity: " + data.list[0].main.humidity + '%';
+    // var humidityEl = document.createElement("p");
+    // console.log(data.list[0].main.humidity);
+    // humidityEl.textContent = "Humidity: " + 
+    // data.list[0].main.humidity + '%';
 
-    //var windEl = document.createElement("p");
-    //console.log(data.list[0].main.);
-    //
+    // var windEl = document.createElement("p");
+    // console.log(data.list[0].main.wind);
+    
 
     boxForCurrentDay.append(cityNameEl);
     boxForCurrentDay.append(dateToday);
-    boxForCurrentDay.append(imageEl);
+  //  boxForCurrentDay.append(imageEl);
     boxForCurrentDay.append(currentTempEl);
 
-    boxForCurrentDay.append(humidityEl);
-    //boxForCurrentDay.append(windEl);
+  //  boxForCurrentDay.append(humidityEl);
+ //   boxForCurrentDay.append(windEl);
     //
   }
- /* 
-  function currentDay(data, cityName) {
-    boxForCurrentDay.innerHTML = '';
-    var dateToday = moment().format("MMMM Do YYYY, h:mm:ss a");
-    var cityNameEl = document.createElement("h2");
-    cityNameEl.textContent = cityName;
+  
+  /*function forcastDays(data, cityName) {
+    boxForFutureDay.innerHTML = '';
+    //var dateToday = moment().format("MMMM Do YYYY, h:mm:ss a");
+    //var cityNameEl = document.createElement("h2");
+    //cityNameEl.textContent = cityName;
  
     var imageEl = document.createElement("img");
     var imageUrl =
@@ -75,8 +81,9 @@ $(document).ready(() => {
     console.log(data.list[0].main.humidity);
     humidityEl.textContent = "Humidity: " + data.list[0].main.humidity + '%';
 
-    //var windEl = document.createElement("p");
-    //console.log(data.list[0].main.);
+    var windEl = document.createElement("p");
+    console.log(data.list[0].main.wind);
+    windEl.textContent(data.list[0].main.wind)
     //
 
     boxForCurrentDay.append(cityNameEl);
@@ -85,7 +92,7 @@ $(document).ready(() => {
     boxForCurrentDay.append(currentTempEl);
 
     boxForCurrentDay.append(humidityEl);
-    //boxForCurrentDay.append(windEl);
+    boxForCurrentDay.append(windEl);
     //
   }*/
   // ES6
@@ -98,8 +105,8 @@ $(document).ready(() => {
       .then((data) => {
         // TODO
         coor = data.coord;
-        curr_weather = data.main;
-        console.log(curr_weather)
+        curr_weather = data;
+         console.log(curr_weather)
         // TODO : render curr_weather to current day display in HTML
         
         console.log(coor);
@@ -110,8 +117,13 @@ $(document).ready(() => {
           .then((forecast_data) => {
             // TODO
             console.log(forecast_data);
-            currentDay(forecast_data, search_term);
+            //currentDay(forecast_data, search_term);
+            currentDay(curr_weather, search_term);
+            console.log(forecast_data.list[0]);
+            console.log(forecast_data.list);
+            //futureDay(forcast-_data, search_term);
 
+                      
             saveHistory(search_term);
             //next5days(,)
           });
