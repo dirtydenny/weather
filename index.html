@@ -12,54 +12,34 @@
 </head>
 
 <!-- As a heading -->
-<nav class="navbar bg-primary" style="display:flex; justify-content: space-between;">
-  <div class="text-center ">
-    <span class="navbar-brand mb-0 h1">Weather</span>
-  </div>
-</nav>
+<body class ="bg-secondary">
+<header class="container-fluid text-center bg-primary">
+ 
+    <h1>Weather Dashboard</h1>
+  
+</header>
 
 <div class="container text-center">
   <div class="row">
     <div class="col-2 ">
-      <!-- <form class="row gy-2 gx-3 align-items-center mb-4">
-        <div class="row mb-1">
-          <label class="visually-hidden" for="autoSizingInput">City</label>
-          <input type="text" class="form-control" id="autoSizingInput" placeholder="City">
-        </div>
-        <div class="row">
-          <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-      </form> -->
-      
+         
       <input type="text" id="city-search" placeholder="City">
       <div class="row pb-4">
         <button type="submit" id="city-bt" class="btn btn-primary">Search</button>
       </div>
-<!-- need to change to searched cities below, not -->
-      <div class="row">
-        <button class="btn btn-secondary mb-4" type="button">Orange</button>
-        <button class="btn btn-secondary mb-4" type="button">Los Angeles</button>
-        <button class="btn btn-secondary mb-4" type="button">New York</button>
-        <button class="btn btn-secondary mb-4" type="button">Washington D.C.</button>
-        <button class="btn btn-secondary mb-4" type="button">Tokyo</button>
-        <button class="btn btn-secondary mb-4" type="button">Beijing</button>
-        <button class="btn btn-secondary mb-4" type="button">London</button>
-        <button class="btn btn-secondary mb-4" type="button">Paris</button>
+<!-- History Buttons -->
+      <div class="row btn-secondary mb-4" id="search-history">
+      
       </div>
     </div>
     <div class="col-10 ">
       <div class="row gx-3">
         <div id="currentday">
          -- <div class="card-body">
-            <h5 class="card-title">Searched City</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-          </div> 
+                       </div> 
         </div>
       </div>
-      <h3>5 Day Forecast </h3>
+      <h3>5 Day Forecast</h3>
       <div class="row gy-2 justify-content-evenly">
         <div class="row">
             <div class="card col" style="width: 18rem;">
@@ -126,11 +106,15 @@
     </div>
   </div>
 </div>
-
+</body>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+  integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+  
 <script src="script.js"></script>
 </body>
 
