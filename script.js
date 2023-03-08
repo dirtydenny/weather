@@ -20,7 +20,7 @@ $(document).ready(() => {
 
     historySection.append(newButton);
   };
-// function to 
+// function to create and render searched city
   function currentDay(data, cityName) {
     boxForCurrentDay.innerHTML = '';
     var dateToday = moment().format("MMMM Do YYYY, h:mm:ss a");
@@ -79,10 +79,10 @@ $(document).ready(() => {
     console.log(data.list[0].main.humidity);
     humidityEl.textContent = "Humidity: " + data.list[0].main.humidity + '%';
 
-    //var windEl = document.createElement("p");
-    //console.log(data.list[0].main.wind.speed);
-    //windEl.textContent(data.list[0].main.wind.speed)
-    //
+    var windEl = document.createElement("p");
+    console.log(data.list[0].wind.speed);
+    windEl.textContent ="Wind Speed: " + data.list[0].wind.speed + " MPH"
+    
 
     //boxForFutureDay.append(cityNameEl);
     //boxForFutureDay.append(dateToday);
@@ -90,7 +90,7 @@ $(document).ready(() => {
     boxForFutureDay.append(currentTempEl);
 
     boxForFutureDay.append(humidityEl);
-    //boxForFutureDay.append(windEl);
+    boxForFutureDay.append(windEl);
     //
   }
   // ES6
