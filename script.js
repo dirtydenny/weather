@@ -8,7 +8,7 @@ $(document).ready(() => {
   var boxForCurrentDay = document.querySelector("#currentday");
   var historySection = document.querySelector("#search-history");
   var boxForFutureDay = document.querySelector
-  ("dateDay1");// + [i]
+  ("#dateDay1");// + [i]
 
   const saveHistory = (cityName) => {
     // hisotry button for each city
@@ -26,7 +26,6 @@ $(document).ready(() => {
     var dateToday = moment().format("MMMM Do YYYY, h:mm:ss a");
     var cityNameEl = document.createElement("h2");
     cityNameEl.textContent = cityName;
- 
     var imageEl = document.createElement("img");
     var imageUrl =
       "https://openweathermap.org/img/wn/" +
@@ -44,21 +43,21 @@ $(document).ready(() => {
     humidityEl.textContent = "Humidity: " + 
     data.main.humidity + '%';
 
-    // var windEl = document.createElement("p");
-    // console.log(data.list[0].main.wind);
-    
+    var windEl = document.createElement("p");
+    console.log(data.wind.speed);
+    windEl.textContent = "Wind Speed: " + 
+    data.wind.speed + " MPH";
 
     boxForCurrentDay.append(cityNameEl);
     boxForCurrentDay.append(dateToday);
-     boxForCurrentDay.append(imageEl);
+    boxForCurrentDay.append(imageEl);
     boxForCurrentDay.append(currentTempEl);
-
     boxForCurrentDay.append(humidityEl);
- //   boxForCurrentDay.append(windEl);
+    boxForCurrentDay.append(windEl);
     //
   }
   
-  /*function forcastDays(data, cityName) {
+  function futureDay(data, cityName) {
     boxForFutureDay.innerHTML = '';
     //var dateToday = moment().format("MMMM Do YYYY, h:mm:ss a");
     //var cityNameEl = document.createElement("h2");
@@ -72,7 +71,7 @@ $(document).ready(() => {
 
     imageEl.setAttribute("src", imageUrl);
 
-    var currentTempEl = document.createElement("h3");
+    var currentTempEl = document.createElement("p");
     console.log(data.list[0].main.temp);
     currentTempEl.textContent = "Tempurature: " + data.list[0].main.temp;
 
@@ -80,20 +79,20 @@ $(document).ready(() => {
     console.log(data.list[0].main.humidity);
     humidityEl.textContent = "Humidity: " + data.list[0].main.humidity + '%';
 
-    var windEl = document.createElement("p");
-    console.log(data.list[0].main.wind);
-    windEl.textContent(data.list[0].main.wind)
+    //var windEl = document.createElement("p");
+    //console.log(data.list[0].main.wind.speed);
+    //windEl.textContent(data.list[0].main.wind.speed)
     //
 
-    boxForCurrentDay.append(cityNameEl);
-    boxForCurrentDay.append(dateToday);
-    boxForCurrentDay.append(imageEl);
-    boxForCurrentDay.append(currentTempEl);
+    //boxForFutureDay.append(cityNameEl);
+    //boxForFutureDay.append(dateToday);
+    boxForFutureDay.append(imageEl);
+    boxForFutureDay.append(currentTempEl);
 
-    boxForCurrentDay.append(humidityEl);
-    boxForCurrentDay.append(windEl);
+    boxForFutureDay.append(humidityEl);
+    //boxForFutureDay.append(windEl);
     //
-  }*/
+  }
   // ES6
   const fetchWeather = (search_term) => {
     const API_KEY = "1450619e15ae8cf72330f2b72d1cc222";
@@ -120,7 +119,7 @@ $(document).ready(() => {
             currentDay(curr_weather, search_term);
             console.log(forecast_data.list[0]);
             console.log(forecast_data.list);
-            //futureDay(forcast-_data, search_term);
+            futureDay(forecast_data, search_term);
 
                       
             saveHistory(search_term);
